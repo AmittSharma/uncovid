@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GiveHelpServiceService } from '../give-help-service.service';
 
 @Component({
   selector: 'app-give-help',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GiveHelpComponent implements OnInit {
 
-  constructor() { }
+  constructor(private giveHelpService :GiveHelpServiceService) { }
 
   ngOnInit(): void {
+  }
+
+  saveinfo(){
+    
+  }
+
+  getDistrict(){
+    
+  }
+
+  getCategory(){
+    
+  }
+
+  getState(){
+    
   }
 
 }
