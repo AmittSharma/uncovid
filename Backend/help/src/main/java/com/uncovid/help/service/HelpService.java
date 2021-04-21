@@ -1,6 +1,7 @@
 package com.uncovid.help.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,21 +27,17 @@ public class HelpService {
 	@Autowired
 	private CategoryRepository categoryRepository;
 
-	public List getListOfStates() {
+	public List<States> getListOfStates() {
 		// TODO Auto-generated method stub
 		return stateRepository.findAll();
 
 	}
 
-	public List<District> getListOfDistricts(Integer stateId) {
-		// TODO Auto-generated method stub
-		//change required
-//		return districtRepository.getListOfDistricts(stateId);
-		return null;
+	public List<District> getListOfDistricts(int stateId) {
+		return districtRepository.findByStateId(stateId);
 	}
 
 	public List<Category> getListOfCategories() {
-		// TODO Auto-generated method stub
 		return categoryRepository.findAll();
 	}
 

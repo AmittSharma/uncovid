@@ -40,14 +40,13 @@ public class HelpController {
 	}
 	
 	@GetMapping("/listOfDistricts/{stateId}")
-	public List<District> getListOfDistricts(@PathVariable Integer stateId){
+	public List<District> getListOfDistricts(@PathVariable int stateId){
 		
 		return helpService.getListOfDistricts(stateId);
 	}
 	
 	@GetMapping("/listOfCategories")
 	public List<Category> getListOfCategories(){
-		
 		return helpService.getListOfCategories();
 	}
 }

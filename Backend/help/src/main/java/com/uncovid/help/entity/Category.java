@@ -12,6 +12,7 @@ public class Category {
 	@Id
 	@Column(name = "cat_id")
 	private Integer categoryId;
+	
 	@Column(name = "cat_name")
 	private String categoryName;
 	
