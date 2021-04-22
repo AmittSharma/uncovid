@@ -1,0 +1,11 @@
+{
+  "/help-0.0.1-SNAPSHOT/*": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/takehelp-0.0.1-SNAPSHOT/*": {
+    "target": "http://localhost:8080",
+    "secure": false
+  }
+  
+}

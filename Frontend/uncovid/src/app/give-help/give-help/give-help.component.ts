@@ -11,6 +11,9 @@ export class GiveHelpComponent implements OnInit {
   constructor(private giveHelpService :GiveHelpServiceService) { }
 
   ngOnInit(): void {
+    this.getState();
+    this.getDistrict();
+    this.getCategory();
   }
 
   saveinfo(){
@@ -18,15 +21,21 @@ export class GiveHelpComponent implements OnInit {
   }
 
   getDistrict(){
-    
+    this.giveHelpService.getDistrict().subscribe((data)=>{
+      console.log(data);
+    });
   }
 
   getCategory(){
-    
+    this.giveHelpService.getCategory().subscribe((data)=>{
+      console.log(data);
+    });
   }
 
   getState(){
-    
+    this.giveHelpService.getState().subscribe((data)=>{
+      console.log(data);
+    });
   }
 
 }

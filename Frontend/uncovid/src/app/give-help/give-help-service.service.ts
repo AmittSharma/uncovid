@@ -7,10 +7,10 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class GiveHelpServiceService {
-  private urlForHelp = "help/givehelp";
-  private urlForCategory = "help/givehelp";
-  private urlForState = "help/givehelp";
-  private urlForDistrict = "help/givehelp";
+  private urlForHelp = "/help-0.0.1-SNAPSHOT/help/givehelp";
+  private urlForCategory = "/help-0.0.1-SNAPSHOT/help/listOfCategories";
+  private urlForState = "/help-0.0.1-SNAPSHOT/help/listOfStates";
+  private urlForDistrict = "/help-0.0.1-SNAPSHOT/help/listOfDistricts/1001";
 
   constructor(private http: HttpClient) { }
 
