@@ -2,6 +2,7 @@ package com.uncovid.takehelp.service;
 
 import java.util.List;
 
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,9 +15,12 @@ public class TakeHelpService {
 	@Autowired
 	public TakeHelpRepository takeHelpRepository;
 
-	public List getHelp(Help helpReq) {
-		// TODO Auto-generated method stub
-		return takeHelpRepository.getHelp(helpReq);
+	public List<Help> getHelp(Help helpReq) {
+	
+		
+//		return session.createQuery("Select * from info", Help.class).getResultList();
+//		return takeHelpRepository.findAll();
+		return takeHelpRepository.findByDistrictId(helpReq.getDisctrictId(),helpReq.getCategoryId() );
 	}
 	
 	

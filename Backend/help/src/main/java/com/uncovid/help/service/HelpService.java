@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.uncovid.help.entity.Category;
 import com.uncovid.help.entity.District;
+import com.uncovid.help.entity.Help;
 import com.uncovid.help.entity.HelpCategories;
 import com.uncovid.help.entity.States;
 import com.uncovid.help.repository.CategoryRepository;
@@ -26,6 +27,9 @@ public class HelpService {
 	
 	@Autowired
 	private CategoryRepository categoryRepository;
+	
+	@Autowired
+	private HelpRepository helpRepository;
 
 	public List<States> getListOfStates() {
 		// TODO Auto-generated method stub
@@ -39,6 +43,10 @@ public class HelpService {
 
 	public List<Category> getListOfCategories() {
 		return categoryRepository.findAll();
+	}
+
+	public Help giveHelp(Help help) {
+		return helpRepository.save(help);
 	}
 
 }

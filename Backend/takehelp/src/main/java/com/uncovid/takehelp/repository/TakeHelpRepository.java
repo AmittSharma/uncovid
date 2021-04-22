@@ -11,7 +11,6 @@ import com.uncovid.takehelp.entity.Help;
 @Repository
 public interface TakeHelpRepository extends JpaRepository<Help, Integer> {
 
-	@Query("select * from help")
-	List getHelp(Help helpReq);
+	List<Help> findByDistrictId(int disctrictId, int categoryId);
 
 }

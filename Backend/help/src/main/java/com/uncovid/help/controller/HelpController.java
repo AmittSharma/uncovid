@@ -29,8 +29,8 @@ public class HelpController {
 //	}
 	
 	@PostMapping("/givehelp")
-	public String giveHelp(@RequestBody Help help) {
-		return "You helped someone";
+	public Help giveHelp(@RequestBody Help help) {
+		return helpService.giveHelp(help);
 	}
 
 	@GetMapping("/listOfStates")
