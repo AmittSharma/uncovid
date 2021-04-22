@@ -15,12 +15,9 @@ public class TakeHelpService {
 	@Autowired
 	public TakeHelpRepository takeHelpRepository;
 
-	public List<Help> getHelp(Help helpReq) {
-	
-		
-//		return session.createQuery("Select * from info", Help.class).getResultList();
-//		return takeHelpRepository.findAll();
-		return takeHelpRepository.findByDistrictId(helpReq.getDisctrictId(),helpReq.getCategoryId() );
+	public List<Help> getHelp() {
+		return takeHelpRepository.findAll();
+//		return takeHelpRepository.findByDistrictId(helpReq.getDisctrictId(),helpReq.getCategoryId() );
 	}
 	
 	

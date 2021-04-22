@@ -11,6 +11,7 @@ import com.uncovid.takehelp.entity.Help;
 @Repository
 public interface TakeHelpRepository extends JpaRepository<Help, Integer> {
 
+	@Query(value = "select * from uncovid.info i where i.dis_id = ?1 and i.cat_id = ?2", nativeQuery = true)
 	List<Help> findByDistrictId(int disctrictId, int categoryId);
 
 }
