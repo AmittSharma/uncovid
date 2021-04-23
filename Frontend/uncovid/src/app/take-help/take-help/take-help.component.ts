@@ -14,6 +14,7 @@ export class TakeHelpComponent implements OnInit {
   constructor(private takeHelpService:TakeHelpServiceService) { }
 
   ngOnInit(): void {
+    this.getHelp();
     
   }
 

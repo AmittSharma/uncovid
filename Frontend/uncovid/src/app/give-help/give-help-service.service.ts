@@ -2,6 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Help} from './dto/help';
 import {Observable} from 'rxjs';
+import { Category } from './dto/category';
+import { State } from './dto/state';
+import { District } from './dto/district';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +13,7 @@ export class GiveHelpServiceService {
   private urlForHelp = "/help-0.0.1-SNAPSHOT/help/givehelp";
   private urlForCategory = "/help-0.0.1-SNAPSHOT/help/listOfCategories";
   private urlForState = "/help-0.0.1-SNAPSHOT/help/listOfStates";
-  private urlForDistrict = "/help-0.0.1-SNAPSHOT/help/listOfDistricts/1001";
+  private urlForDistrict = "/help-0.0.1-SNAPSHOT/help/listOfDistricts/";
 
   constructor(private http: HttpClient) { }
 
@@ -18,16 +21,16 @@ export class GiveHelpServiceService {
     this.http.post(this.urlForHelp, help);
   }
 
-  getDistrict():Observable<any>{
-    return this.http.get<any>(this.urlForDistrict);
+  getDistrict(state:any):Observable<District[]>{
+    return this.http.get<District[]>(this.urlForDistrict+state);
   }
 
-  getCategory():Observable<any>{
-    return this.http.get<any>(this.urlForCategory);
+  getCategory():Observable<Category[]>{
+    return this.http.get<Category[]>(this.urlForCategory);
   }
 
-  getState():Observable<any>{
-    return this.http.get<any>(this.urlForState);
+  getState():Observable<State[]>{
+    return this.http.get<State[]>(this.urlForState);
   }
   
 }

@@ -1,1 +1,67 @@
-<p>give-help works!</p>
+<mat-card>
+<mat-card-title>Register Your Help</mat-card-title>
+<mat-card-content>
+<form (ngSubmit)="saveinfo()" [formGroup]="giveHelpForm">
+    <div>
+    <mat-form-field >
+        <mat-label>State</mat-label>
+        <mat-select formControlName="stateId"  name="stateId" matInput (selectionChange)="getDistrict($event.value)">
+            <mat-option *ngFor="let state of states" [value]="state.stateId" >
+            {{state.stateName}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field >
+        <mat-label>District</mat-label>
+        <mat-select formControlName="districtId"   name="districtId" matInput>
+            <mat-option *ngFor="let district of districts" [value]="district.districtId" >
+            {{district.districtName}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    </div>
+    <div>
+    <mat-form-field >
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="categoryId"  name="categoryId" >
+            <mat-option *ngFor="let catogory of categories" [value]="catogory.categoryId" >
+            {{catogory.categoryName}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field >
+        <mat-label>Cost</mat-label>
+        <mat-select formControlName="paidOrFree"  name="paidOrFree" >
+            <mat-option  value="Free" >Free</mat-option>
+            <mat-option  value="Paid" >Paid</mat-option>
+        </mat-select>
+    </mat-form-field>
+    </div>
+
+    <div>
+    <mat-form-field >
+        <mat-label>Description</mat-label>
+        <textarea formControlName="description"  name="description" matInput></textarea>
+    </mat-form-field>
+    </div>
+    
+    <div>
+    <mat-form-field >
+        <mat-label>Contact Person</mat-label>
+        <input formControlName="contactPersonName"  name = "contactPersonName" type="text" matInput>
+    </mat-form-field>
+
+    <mat-form-field >
+        <mat-label>Contact Person</mat-label>
+        <input formControlName="contactNumber" name ="contactNumber"type="number" matInput>
+    </mat-form-field>
+    </div>
+
+    <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+</form>
+</mat-card-content>
+</mat-card>
