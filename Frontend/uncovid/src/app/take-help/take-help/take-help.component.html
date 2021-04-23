@@ -37,45 +37,49 @@
     </mat-card-content>
     </mat-card>
 
-
-
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <mat-form-field >
+        <input  type = "text" matInput (keyup)="filterData($event)" placeholder="Filter Search Result">
+    </mat-form-field>
+    
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort >
 
         <ng-container matColumnDef="state">
-          <th mat-header-cell *matHeaderCellDef> State </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> State </th>
           <td mat-cell *matCellDef="let help"> {{help.helpId}} </td>
         </ng-container>
 
         <ng-container matColumnDef="district">
-            <th mat-header-cell *matHeaderCellDef> District </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> District </th>
             <td mat-cell *matCellDef="let help"> {{help.disctrictId}} </td>
         </ng-container>
         
         <ng-container matColumnDef="category">
-            <th mat-header-cell *matHeaderCellDef> Category </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Category </th>
             <td mat-cell *matCellDef="let help"> {{help.categoryId}} </td>
         </ng-container>
         
         <ng-container matColumnDef="description">
-            <th mat-header-cell *matHeaderCellDef> Description </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
             <td mat-cell *matCellDef="let help"> {{help.description}} </td>
         </ng-container>
 
         <ng-container matColumnDef="cost">
-            <th mat-header-cell *matHeaderCellDef> Cost </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Cost </th>
             <td mat-cell *matCellDef="let help"> {{help.paidOrFree}} </td>
         </ng-container>
 
         <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> Contact Person </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Contact Person </th>
             <td mat-cell *matCellDef="let help"> {{help.contactPersonName}} </td>
         </ng-container>
 
         <ng-container matColumnDef="number">
-            <th mat-header-cell *matHeaderCellDef> Contact Name </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Contact Name </th>
             <td mat-cell *matCellDef="let help"> {{help.contactNumber}} </td>
         </ng-container>
       
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 15, 20]" showFirstLastButtons></mat-paginator>
