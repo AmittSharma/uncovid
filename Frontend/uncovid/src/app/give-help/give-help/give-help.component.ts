@@ -40,7 +40,9 @@ export class GiveHelpComponent implements OnInit {
 
   saveinfo(){
     this.help = this.giveHelpForm.value;
-    this.giveHelpService.saveinfo(this.help);
+    this.giveHelpService.saveinfo(this.help).subscribe((data)=>{
+      console.log(data);
+    });
   }
 
   getDistrict(state:String){

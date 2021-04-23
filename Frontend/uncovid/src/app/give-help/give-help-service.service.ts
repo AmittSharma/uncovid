@@ -17,8 +17,9 @@ export class GiveHelpServiceService {
 
   constructor(private http: HttpClient) { }
 
-  saveinfo(help:Help){
-    this.http.post(this.urlForHelp, help);
+  saveinfo(help:Help):Observable<any>{
+    const headers = { 'content-type': 'application/json'};  
+    return this.http.post(this.urlForHelp, help, {'headers':headers});
   }
 
   getDistrict(state:any):Observable<District[]>{
