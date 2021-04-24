@@ -31,7 +31,7 @@ public class HelpController {
 //	}
 	
 	@PostMapping("/givehelp")
-	public Help giveHelp(@RequestBody Help help) {
+	public String giveHelp(@RequestBody Help help) {
 		return helpService.giveHelp(help);
 	}
 
