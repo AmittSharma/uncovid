@@ -16,7 +16,13 @@ public class Help {
 	@GeneratedValue(strategy =  GenerationType.AUTO)
 	private int helpId;
 	@Column(name= "dis_id")
-	private int disctrictId;
+	private int districtId;
+	
+	private String districtName;
+	@Column(name="state_id")
+	private int stateId;
+	private String stateName;
+	private String categoryName;
 	@Column(name= "cat_id")
 	private int categoryId;
 	@Column(name= "description")
@@ -26,19 +32,14 @@ public class Help {
 	@Column(name= "contact_person")
 	private String contactPersonName;
 	@Column(name= "contact_number")
-	private int contactNumber;
+	private String contactNumber;
 	public int getHelpId() {
 		return helpId;
 	}
 	public void setHelpId(int helpId) {
 		this.helpId = helpId;
 	}
-	public int getDisctrictId() {
-		return disctrictId;
-	}
-	public void setDisctrictId(int disctrictId) {
-		this.disctrictId = disctrictId;
-	}
+	
 	public int getCategoryId() {
 		return categoryId;
 	}
@@ -63,17 +64,54 @@ public class Help {
 	public void setContactPersonName(String contactPersonName) {
 		this.contactPersonName = contactPersonName;
 	}
-	public int getContactNumber() {
+	public String getContactNumber() {
 		return contactNumber;
 	}
-	public void setContactNumber(int contactNumber) {
+	public void setContactNumber(String contactNumber) {
 		this.contactNumber = contactNumber;
 	}
-	public Help(int helpId, int disctrictId, int categoryId, String description, String paidOrFree,
-			String contactPersonName, int contactNumber) {
+	
+	public int getDistrictId() {
+		return districtId;
+	}
+	public void setDistrictId(int districtId) {
+		this.districtId = districtId;
+	}
+	public String getDistrictName() {
+		return districtName;
+	}
+	public void setDistrictName(String districtName) {
+		this.districtName = districtName;
+	}
+	public int getStateId() {
+		return stateId;
+	}
+	public void setStateId(int stateId) {
+		this.stateId = stateId;
+	}
+	public String getStateName() {
+		return stateName;
+	}
+	public void setStateName(String stateName) {
+		this.stateName = stateName;
+	}
+	public String getCategoryName() {
+		return categoryName;
+	}
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+	
+	
+	public Help(int helpId, int districtId, String districtName, int stateId, String stateName, String categoryName,
+			int categoryId, String description, String paidOrFree, String contactPersonName, String contactNumber) {
 		super();
 		this.helpId = helpId;
-		this.disctrictId = disctrictId;
+		this.districtId = districtId;
+		this.districtName = districtName;
+		this.stateId = stateId;
+		this.stateName = stateName;
+		this.categoryName = categoryName;
 		this.categoryId = categoryId;
 		this.description = description;
 		this.paidOrFree = paidOrFree;
