@@ -59,6 +59,7 @@ export class GiveHelpComponent implements OnInit {
 
   getState(){
     this.giveHelpService.getState().subscribe((data:State[])=>{
+      console.log(data);
       this.states = data;
     });
   }

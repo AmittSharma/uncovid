@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TakeHelpServiceService } from '../take-help-service.service';
 import {Help} from '../dto/help';
 import { GiveHelpServiceService } from 'src/app/give-help/give-help-service.service';
@@ -6,9 +6,7 @@ import { District } from 'src/app/give-help/dto/district';
 import { Category } from 'src/app/give-help/dto/category';
 import { State } from 'src/app/give-help/dto/state';
 import { FormControl, FormGroup } from '@angular/forms';
-import {MatPaginator} from '@angular/material/paginator'; 
-import { MatTableDataSource } from '@angular/material/table';
-import {MatSort} from '@angular/material/sort';
+
 @Component({
   selector: 'app-take-help',
   templateUrl: './take-help.component.html',
@@ -17,13 +15,12 @@ import {MatSort} from '@angular/material/sort';
 export class TakeHelpComponent implements OnInit {
 
   helps: Help[];
+  helpForm : Help;
   states : State[];
   districts :District[];
   categories :Category[];
   dataSource : any;
   displayedColumns: string[] = ['state', 'district', 'category', 'description', 'cost', 'name', 'number'];
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
 
   takeHelpForm : FormGroup;
 
@@ -41,18 +38,11 @@ export class TakeHelpComponent implements OnInit {
   }
 
   getHelp(){
-    this.takeHelpService.getHelp().subscribe((data)=>{
+  this.helpForm = this.takeHelpForm.value;
+    this.takeHelpService.getHelp(this.helpForm).subscribe((data)=>{
       this.helps = data;
-      this.dataSource =  new MatTableDataSource<Help>(this.helps);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
+      this.dataSource = this.helps;
     });
-  }
-
- 
-
-  filterData(val){
-    this.dataSource.filter = val.target.value;
   }
 
   getDistrict(state:String){

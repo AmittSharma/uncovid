@@ -45,8 +45,9 @@ public class HelpService {
 		return categoryRepository.findAll();
 	}
 
-	public Help giveHelp(Help help) {
-		return helpRepository.save(help);
+	public String giveHelp(Help help) {
+		helpRepository.save(help);
+		return "SUCCESS";
 	}
 
 }

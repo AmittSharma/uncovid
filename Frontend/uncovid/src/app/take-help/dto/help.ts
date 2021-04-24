@@ -1,6 +1,6 @@
 export interface Help {
 helpId:any;
-disctrictId:any;
+districtId:any;
 districtName:any;
 stateId:any;
 stateName:any;

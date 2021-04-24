@@ -1,8 +1,10 @@
+import { MaterialModule } from './../material/material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HeaderRoutingModule } from './header-routing.module';
 import { HeaderComponent } from './header/header.component';
+import { ShareModule } from 'ngx-sharebuttons';
 
 
 @NgModule({
@@ -11,7 +13,10 @@ import { HeaderComponent } from './header/header.component';
   ],
   imports: [
     CommonModule,
-    HeaderRoutingModule
+    HeaderRoutingModule,
+    MaterialModule,
+    ShareModule
+    
   ],
   exports:[HeaderComponent]
 })

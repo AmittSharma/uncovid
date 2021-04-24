@@ -9,10 +9,7 @@ import { MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { ReactiveFormsModule,} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field'; 
-import {MatTableModule} from '@angular/material/table'; 
-import {MatSortModule } from '@angular/material/sort';
-import {MatPaginatorModule} from '@angular/material/paginator';
-
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -28,9 +25,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatCardModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatTableModule,
-    MatSortModule,
-    MatPaginatorModule
+    MatTableModule
   ],
   exports:[
     TakeHelpComponent

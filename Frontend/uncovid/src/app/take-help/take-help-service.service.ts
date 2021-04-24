@@ -8,11 +8,12 @@ import {Help} from './dto/help';
 })
 export class TakeHelpServiceService {
 
-  private urlForHelp = "/takehelp-0.0.1-SNAPSHOT/takehelp/gethelp";
+  private urlForHelp = "/takehelp/gethelp";
 
   constructor(private http:HttpClient) { }
   
-  getHelp():Observable<Help[]>{
-    return this.http.get<Help[]>(this.urlForHelp);
+  getHelp(help:Help):Observable<Help[]>{
+  const headers = { 'content-type': 'application/json'};  
+    return this.http.post<Help[]>(this.urlForHelp,help,{'headers':headers});
   }
 }
