@@ -19,30 +19,52 @@ export class GiveHelpComponent implements OnInit {
   states : State[];
   districts :District[];
   categories :Category[];
-
+  messageType:string;
+  messageText:string;
   giveHelpForm : FormGroup;
 
   constructor(private giveHelpService :GiveHelpServiceService) { }
 
   ngOnInit(): void {
-    this.giveHelpForm= new FormGroup({
-    stateId : new FormControl('',[Validators.required]),
-    districtId : new FormControl('',[Validators.required]),
-    categoryId : new FormControl('',[Validators.required]),
-    description : new FormControl('',[Validators.required]),
-    paidOrFree : new FormControl('',[Validators.required]),
-    contactNumber : new FormControl('',[Validators.required]),
-    contactPersonName : new FormControl('',[]),
-    });
+    this.formInit();
     this.getState();
     this.getCategory();
   }
-
+  formInit(){
+    this.giveHelpForm= new FormGroup({
+      stateId : new FormControl('',[Validators.required]),
+      districtId : new FormControl('',[Validators.required]),
+      categoryId : new FormControl('',[Validators.required]),
+      description : new FormControl('',[Validators.required]),
+      paidOrFree : new FormControl('',[Validators.required]),
+      contactNumber : new FormControl('',[Validators.required]),
+      contactPersonName : new FormControl('',[Validators.required]),
+      });
+  }
   saveinfo(){
+    if(this.giveHelpForm.status=="VALID"){
     this.help = this.giveHelpForm.value;
     this.giveHelpService.saveinfo(this.help).subscribe((data)=>{
-      console.log(data);
+      this.messageText = "Successfully Registered !!";
+      this.messageType = "success";
+      setTimeout(()=>{
+        document.getElementById("message").className="alert";
+        this.messageText = "";
+      this.messageType = "";
+      },5000);
+
     });
+  }else{
+        this.messageText = "Fill all mandatory fields !!";
+        this.messageType = "error";
+        setTimeout(()=>{
+          document.getElementById("message").className="alert";
+          this.messageText = "";
+        this.messageType = "";
+        },5000);
+
+  }
+
   }
 
   getDistrict(state:String){
@@ -59,7 +81,6 @@ export class GiveHelpComponent implements OnInit {
 
   getState(){
     this.giveHelpService.getState().subscribe((data:State[])=>{
-      console.log(data);
       this.states = data;
     });
   }

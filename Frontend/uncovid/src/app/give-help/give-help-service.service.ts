@@ -10,16 +10,16 @@ import { District } from './dto/district';
   providedIn: 'root'
 })
 export class GiveHelpServiceService {
-  private urlForHelp = "/help/givehelp";
-  private urlForCategory = "/help/listOfCategories";
-  private urlForState = "/help/listOfStates";
-  private urlForDistrict = "/help/listOfDistricts/";
+  private urlForHelp = "/help-0.0.1-SNAPSHOT/help/givehelp";
+  private urlForCategory = "/help-0.0.1-SNAPSHOT/help/listOfCategories";
+  private urlForState = "/help-0.0.1-SNAPSHOT/help/listOfStates";
+  private urlForDistrict = "/help-0.0.1-SNAPSHOT/help/listOfDistricts/";
 
   constructor(private http: HttpClient) { }
 
   saveinfo(help:Help):Observable<any>{
     const headers = { 'content-type': 'application/json'};  
-    return this.http.post(this.urlForHelp, help, {'headers':headers});
+    return this.http.post<any>(this.urlForHelp, help, {'headers':headers});
   }
 
   getDistrict(state:any):Observable<District[]>{

@@ -1,3 +1,9 @@
 table{
     width : 100%
 }
+mat-card{
+    width: 60%;
+}
+.gap{
+    height: 10px;
+}

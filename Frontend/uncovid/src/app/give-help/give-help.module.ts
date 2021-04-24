@@ -7,7 +7,8 @@ import { MatButtonModule} from '@angular/material/button';
 import { MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { ReactiveFormsModule,} from '@angular/forms';
-import {MatFormFieldModule} from '@angular/material/form-field';                                
+import {MatFormFieldModule} from '@angular/material/form-field'; 
+import {MatCheckboxModule} from '@angular/material/checkbox';                               
 
 
 
@@ -23,7 +24,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatButtonModule,
     MatCardModule,
     MatSelectModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatCheckboxModule
   ],
   exports:[
     GiveHelpComponent

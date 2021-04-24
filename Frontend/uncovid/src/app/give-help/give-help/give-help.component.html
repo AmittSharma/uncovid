@@ -1,8 +1,21 @@
-<mat-card>
-<mat-card-title>Register Your Help</mat-card-title>
+<div id="message" *ngIf="messageType" [ngClass]="{ 'alert': messageType, 'alert-success': messageType === 'success', 'alert-danger': messageType === 'error' }"><span class="errorSuccessMessage">{{messageText}}</span></div>
+<div class="row">
+<div class="col" align="center">
+<mat-card >
+ <div class="row">   
+<div class="col"></div>
+<div class="col"><mat-card-title>Register Your Help</mat-card-title></div>
+<div class="col"></div>
+</div>
+<div class="row gap"></div>
+
 <mat-card-content>
+    <div class="row">
+        <div class="col" align="center">   
 <form (ngSubmit)="saveinfo()" [formGroup]="giveHelpForm">
-    <div>
+    
+    <div class="row">
+        <div class="col" align="center"> 
     <mat-form-field >
         <mat-label>State</mat-label>
         <mat-select formControlName="stateId"  name="stateId" matInput (selectionChange)="getDistrict($event.value)">
@@ -11,7 +24,7 @@
             </mat-option>
         </mat-select>
     </mat-form-field>
-
+</div><div class="col">
     <mat-form-field >
         <mat-label>District</mat-label>
         <mat-select formControlName="districtId"   name="districtId" matInput>
@@ -20,8 +33,10 @@
             </mat-option>
         </mat-select>
     </mat-form-field>
-    </div>
-    <div>
+</div></div>
+<div class="row gap"></div>
+    <div class="row">
+        <div class="col" align="center"> 
     <mat-form-field >
         <mat-label>Category</mat-label>
         <mat-select formControlName="categoryId"  name="categoryId" >
@@ -30,7 +45,8 @@
             </mat-option>
         </mat-select>
     </mat-form-field>
-
+    </div>
+    <div class="col">
     <mat-form-field >
         <mat-label>Cost</mat-label>
         <mat-select formControlName="paidOrFree"  name="paidOrFree" >
@@ -38,30 +54,45 @@
             <mat-option  value="Paid" >Paid</mat-option>
         </mat-select>
     </mat-form-field>
-    </div>
-
-    <div>
-    <mat-form-field >
+</div>
+</div>
+<div class="row gap"></div>
+    <div class="row">
+        <div class="col" align="left" style="padding-left: 14%;"> 
+    <mat-form-field style="width: 548px;" >
         <mat-label>Description</mat-label>
-        <textarea formControlName="description"  name="description" matInput></textarea>
+        <textarea   formControlName="description"  name="description" matInput></textarea>
     </mat-form-field>
-    </div>
-    
-    <div>
+    </div></div>
+    <div class="row gap"></div>
+    <div class="row">
+        <div class="col" align="center"> 
     <mat-form-field >
         <mat-label>Contact Person</mat-label>
         <input formControlName="contactPersonName"  name = "contactPersonName" type="text" matInput>
     </mat-form-field>
-
+    </div>
+    <div class="col">
     <mat-form-field >
         <mat-label>Contact Person</mat-label>
         <input formControlName="contactNumber" name ="contactNumber"type="number" matInput>
     </mat-form-field>
+</div>
+</div>
+<div class="row gap"></div>
+<div class="row">
+    <div class="col">
+        <mat-checkbox #c color="primary" >I agree to share all the above information to all the help seeker.</mat-checkbox>   
     </div>
-
+</div>
+<div class="row gap"></div>
     <mat-card-actions>
-        <button mat-raised-button color="primary" type="submit">Submit</button>
+        <button mat-raised-button [disabled]="!c.checked" color="primary" type="submit">Submit</button>
     </mat-card-actions>
 </form>
+</div>
+</div>
 </mat-card-content>
 </mat-card>
+</div>
+</div>
