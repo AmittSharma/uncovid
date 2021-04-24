@@ -1,6 +1,7 @@
 import { OtherHelps } from './../dto/other-helps';
 import { HomeService } from './../home.service';
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit{
   
   displayedColumns: string[] = ['description', 'url'];
-  dataSource:OtherHelps[];
+  dataSource:any;
   
   constructor(private homeService:HomeService) { 
 
@@ -19,13 +20,20 @@ export class HomeComponent implements OnInit{
 
   ngOnInit(): void {
     this.homeService.getOtherHelpers().subscribe((data)=>{
-      this.dataSource = data;
+      this.dataSource = new MatTableDataSource<OtherHelps>(data);
     });
   }
   
   filterData(val){
+    console.log(val.target.value);
+    console.log(this.dataSource);
     this.dataSource.filter = val.target.value;
   }
+
+  openUrl(val){
+    window.open(val,"_blank");
+  }
+
   
 
 

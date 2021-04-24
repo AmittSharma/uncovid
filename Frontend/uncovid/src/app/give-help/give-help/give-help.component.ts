@@ -45,13 +45,24 @@ export class GiveHelpComponent implements OnInit {
     if(this.giveHelpForm.status=="VALID"){
     this.help = this.giveHelpForm.value;
     this.giveHelpService.saveinfo(this.help).subscribe((data)=>{
-      this.messageText = "Successfully Registered !!";
+      if(data.status=="success"){
+        this.messageText = "Successfully Registered !!";
       this.messageType = "success";
       setTimeout(()=>{
         document.getElementById("message").className="alert";
         this.messageText = "";
       this.messageType = "";
       },5000);
+    }else{
+      this.messageText = "Something Went Wrong!!";
+      this.messageType = "error";
+      setTimeout(()=>{
+        document.getElementById("message").className="alert";
+        this.messageText = "";
+      this.messageType = "";
+      },5000);
+    }
+      
 
     });
   }else{

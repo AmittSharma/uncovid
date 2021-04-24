@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.json.simple.JSONObject;
 
 import com.uncovid.help.entity.Category;
 import com.uncovid.help.entity.District;
@@ -31,8 +32,16 @@ public class HelpController {
 //	}
 	
 	@PostMapping("/givehelp")
-	public String giveHelp(@RequestBody Help help) {
-		return helpService.giveHelp(help);
+	public JSONObject giveHelp(@RequestBody Help help) {
+		JSONObject obj = new JSONObject();
+		Help result =  helpService.giveHelp(help);
+		if(result != null) {
+			obj.put("status", "success");
+		}
+		else {
+			obj.put("status", "error");
+		}
+		return obj;
 	}
 
 	@GetMapping("/listOfStates")

@@ -8,7 +8,7 @@ import {Help} from './dto/help';
 })
 export class TakeHelpServiceService {
 
-  private urlForHelp = "/takehelp-0.0.1-SNAPSHOT/takehelp/gethelp";
+  private urlForHelp = "/takehelp/gethelp";
   constructor(private http:HttpClient) { }
   
   getHelp(help:Help):Observable<Help[]>{

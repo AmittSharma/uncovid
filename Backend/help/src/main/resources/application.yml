@@ -1,8 +1,8 @@
 spring:
   datasource:
-    username: root
-    password: 
-    url: jdbc:mysql://localhost/uncovid
+    username: hbstudent
+    password: hbstudent
+    url: jdbc:mysql://localhost:3306/uncovid
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     show-sql: true

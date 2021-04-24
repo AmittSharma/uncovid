@@ -26,7 +26,8 @@ import { MatRippleModule } from '@angular/material/core';
     MatIconModule,
     MatMenuModule,
     MatInputModule,
-    MatRippleModule
+    MatRippleModule,
+    MatFormFieldModule
   ],
   exports: [
     MatButtonModule,
@@ -39,7 +40,8 @@ import { MatRippleModule } from '@angular/material/core';
     MatIconModule,
     MatMenuModule,
     MatInputModule,
-    MatRippleModule
+    MatRippleModule,
+    MatFormFieldModule
   ]
 })
 export class MaterialModule { }
