@@ -1,41 +1,28 @@
-
-  <p>
-    <mat-toolbar color="primary">
-      <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+<p>
+  <mat-toolbar color="primary">
+    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
         <mat-icon>menu</mat-icon>
       </button> -->
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon routerLink="/" routerLinkActive="active">home</mat-icon>
-      </button>
-      <span>UnCovid</span>
-      <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-      </button>
-    </mat-toolbar>
-  </p>
-  <!-- <button mat-fab shareButton="facebook"
-                #fbBtn="shareButton"
-                [style.backgroundColor]="fbBtn?.color">
-  <fa-icon *ngIf="fbBtn" [icon]="fbBtn.icon" size="lg"></fa-icon>
-</button>
-<button mat-fab shareButton="twitter"
-                #twtBtn="shareButton"
-                [style.backgroundColor]="twtBtn?.color">
-  <fa-icon *ngIf="twtBtn" [icon]="twtBtn.icon" size="lg"></fa-icon>
-</button> -->
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon routerLink="/" routerLinkActive="active">home</mat-icon>
+    </button>
+    <span>UnCovid</span>
+    <span class="example-spacer"></span>
+    <h3>Disclaimer: humari jawaabdaari nahi hai</h3>
+    <span class="example-spacer"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon"
+      aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
 
-<ol>
-  <!-- <li>
-    <mat-form-field>
-      <mat-label>What's your name?</mat-label>
-      <input matInput [(ngModel)]="name">
-    </mat-form-field>
-  </li> -->
-  <!-- <li>
-    <button mat-raised-button (click)="openDialog()">Pick one</button>
-  </li>
-  <li *ngIf="animal">
-    You chose: <i>{{animal}}</i>
-  </li>
-</ol> -->
+    <mat-menu #menu="matMenu">
+      <share-buttons [theme]="'outline'"
+ [include]="['facebook','twitter','messenger','whatsapp','copy']"
+ [show]="5"
+ [size]="4"
+ [url]="'https://twitter.com/amittspeaking'"
+></share-buttons>
+    </mat-menu>
+
+  </mat-toolbar>
+</p>

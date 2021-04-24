@@ -9,9 +9,6 @@ table{
 width: 100%;
 }
 
-/* mat-card{
-  width: 100%;
-} */
 
 /* The dots/bullets/indicators */
 .dot {
@@ -37,7 +34,8 @@ width: 100%;
 }
 
 section {
-  display: table;
+  display: block;
+
 }
 
 .example-label {

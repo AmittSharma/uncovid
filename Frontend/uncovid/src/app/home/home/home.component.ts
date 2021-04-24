@@ -23,6 +23,9 @@ export class HomeComponent implements OnInit{
     });
   }
   
+  filterData(val){
+    this.dataSource.filter = val.target.value;
+  }
   
 
 
