@@ -9,6 +9,23 @@ table{
 width: 100%;
 }
 
+.mat-column-url{
+  width: 20%;
+  text-align: center;
+}
+.abutton {
+  background-color: #3f51b5;  
+  border-radius: 5px;
+  color: white;
+  padding: .5em;
+  text-decoration: none;
+}
+
+.abutton:focus,
+.abutton:hover {
+  background-color: FireBrick;
+  color: White;
+}
 
 /* The dots/bullets/indicators */
 .dot {

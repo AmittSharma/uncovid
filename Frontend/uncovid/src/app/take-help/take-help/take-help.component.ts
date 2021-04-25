@@ -45,9 +45,9 @@ export class TakeHelpComponent implements OnInit {
       this.help = this.takeHelpForm.value;
       this.takeHelpService.getHelp(this.help).subscribe((data) => {
         this.helps = data;
-        this.dataSource = new MatTableDataSource<Help>(this.helps);
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
+        // this.dataSource = new MatTableDataSource<Help>(this.helps);
+        // this.dataSource.paginator = this.paginator;
+        // this.dataSource.sort = this.sort;
       });
     }
 
@@ -55,9 +55,9 @@ export class TakeHelpComponent implements OnInit {
 
 
 
-  filterData(val) {
-    this.dataSource.filter = val.target.value;
-  }
+  // filterData(val) {
+  //   this.dataSource.filter = val.target.value;
+  // }
 
   getDistrict(state: String) {
     this.giveHelpService.getDistrict(state).subscribe((data: District[]) => {

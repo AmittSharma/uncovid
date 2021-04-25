@@ -15,37 +15,57 @@
 
 <mat-card>
 
-  <div class="row">
+  <!--  <div class="row">
     <div class="col" align="left">
       <mat-card-header>
         <mat-card-title>Other Helping Hands</mat-card-title>
       </mat-card-header>
     </div>
-    <div class="col" align="right" style="padding-right: 60px;">
+    <!-- <div class="col" align="right" style="padding-right: 60px;">
       <mat-form-field>
         <input type="text" matInput (keyup)="filterData($event)" placeholder="Filter Search Result">
       </mat-form-field>
     </div>
-  </div>
-
+  </div>-->
+  <!-- 
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-    <!-- Description Column -->
     <ng-container matColumnDef="description">
       <th mat-header-cell *matHeaderCellDef>Description</th>
       <td mat-cell *matCellDef="let element"> {{element.description}} </td>
     </ng-container>
 
-    <!-- URL Column -->
+  
     <ng-container matColumnDef="url">
       <th mat-header-cell *matHeaderCellDef>URL</th>
       <td mat-cell *matCellDef="let element">
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
-          (click)="openUrl(element.url)">Click here to visit</button>
+        <a href="{{element.url}}" target="_blank" rel="noopener" class="abutton">
+          Visit
+        </a>
       </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 15, 20]" showFirstLastButtons></mat-paginator> -->
+
 </mat-card>
+<br>
+<div class="col" align="center">
+  <h2>Other Helping Hands</h2>
+</div>
+<div class="row" *ngFor="let data of dataSource">
+  <div class="col" align="center">
+    <mat-card style="width: 60%;">
+      <span><strong> Description</strong></span><br>
+      <span>{{data.description}}</span><br><br>
+      <span>
+        <a href="{{data.url}}" target="_blank" rel="noopener" class="abutton">
+          Visit
+        </a>
+      </span>
+    </mat-card>
+    <br>
+  </div>
+</div>

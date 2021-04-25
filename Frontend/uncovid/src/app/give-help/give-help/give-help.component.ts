@@ -37,7 +37,7 @@ export class GiveHelpComponent implements OnInit {
       categoryId : new FormControl('',[Validators.required]),
       description : new FormControl('',[Validators.required]),
       paidOrFree : new FormControl('',[Validators.required]),
-      contactNumber : new FormControl('',[Validators.required]),
+      contactNumber : new FormControl('',[Validators.required,Validators.pattern(/^[0-9]\d*$/),Validators.min(5999999999)]),
       contactPersonName : new FormControl('',[Validators.required]),
       });
   }
@@ -53,6 +53,7 @@ export class GiveHelpComponent implements OnInit {
         this.messageText = "";
       this.messageType = "";
       },5000);
+      this.formInit();
     }else{
       this.messageText = "Something Went Wrong!!";
       this.messageType = "error";

@@ -58,8 +58,8 @@
 </div>
 <div class="row gap"></div>
     <div class="row">
-        <div class="col" align="left" style="padding-left: 14%;"> 
-    <mat-form-field style="width: 548px;" >
+        <div class="col" align="left" style="padding-left: 4%;"> 
+    <mat-form-field style="width: 97%;" >
         <mat-label>Description</mat-label>
         <textarea   formControlName="description"  name="description" matInput></textarea>
     </mat-form-field>
@@ -74,7 +74,7 @@
     </div>
     <div class="col">
     <mat-form-field >
-        <mat-label>Contact Person</mat-label>
+        <mat-label>Contact Number</mat-label>
         <input formControlName="contactNumber" name ="contactNumber"type="number" matInput>
     </mat-form-field>
 </div>
@@ -82,7 +82,10 @@
 <div class="row gap"></div>
 <div class="row">
     <div class="col">
-        <mat-checkbox #c color="primary" >I agree to share all the above information to all the help seeker.</mat-checkbox>   
+        <span>I agree to share all the above information to all the help seeker.</span><br>
+        <mat-checkbox #c color="primary" >Yes,I agree.
+        </mat-checkbox>   
+
     </div>
 </div>
 <div class="row gap"></div>
