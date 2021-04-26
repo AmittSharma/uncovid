@@ -1,0 +1,13 @@
+{
+  "/help/*": {
+    "target": "http://45.93.136.114:8080/givehelp-0.0.1-SNAPSHOT/",
+    "secure": false,
+     "changeOrigin": true
+  },
+  "/takehelp/*": {
+    "target": "http://45.93.136.114:8080/givehelp-0.0.1-SNAPSHOT/",
+    "secure": false,
+     "changeOrigin": true
+  }
+  
+}

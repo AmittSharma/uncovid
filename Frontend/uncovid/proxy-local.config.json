@@ -1,0 +1,13 @@
+{
+  "/help/*": {
+    "target": "http://localhost:8080",
+    "secure": false,
+     "changeOrigin": true
+  },
+  "/takehelp/*": {
+    "target": "http://localhost:8080",
+    "secure": false,
+     "changeOrigin": true
+  }
+  
+}

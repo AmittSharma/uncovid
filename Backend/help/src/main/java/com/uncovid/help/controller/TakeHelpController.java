@@ -14,16 +14,15 @@ import org.json.simple.JSONObject;
 
 import com.uncovid.help.entity.Category;
 import com.uncovid.help.entity.District;
-import com.uncovid.help.entity.Help;
-import com.uncovid.help.entity.States;
 import com.uncovid.help.entity.TakeHelp;
+import com.uncovid.help.entity.States;
 import com.uncovid.help.service.HelpService;
 import com.uncovid.help.entity.OtherHelp;
 
 @RestController
-@RequestMapping("/help")
+@RequestMapping("/takehelp")
 @CrossOrigin(origins = "*")
-public class HelpController {
+public class TakeHelpController {
 	
 	@Autowired
 	public HelpService helpService;
@@ -32,36 +31,6 @@ public class HelpController {
 //	public String getHelp() {
 //		return "You were helped";
 //	}
-	
-	@PostMapping("/givehelp")
-	public JSONObject giveHelp(@RequestBody Help help) {
-		JSONObject obj = new JSONObject();
-		Help result =  helpService.giveHelp(help);
-		if(result != null) {
-			obj.put("status", "success");
-		}
-		else {
-			obj.put("status", "error");
-		}
-		return obj;
-	}
-
-	@GetMapping("/listOfStates")
-	public List<States> getListOfStates(){
-		
-		return helpService.getListOfStates();
-	}
-	
-	@GetMapping("/listOfDistricts/{stateId}")
-	public List<District> getListOfDistricts(@PathVariable int stateId){
-		
-		return helpService.getListOfDistricts(stateId);
-	}
-	
-	@GetMapping("/listOfCategories")
-	public List<Category> getListOfCategories(){
-		return helpService.getListOfCategories();
-	}
 	
 	@GetMapping("/otherHelpers")
 	public List<OtherHelp> getOtherHelpers(){

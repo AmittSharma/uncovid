@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = "com.uncovid.help.repository")
+//@EnableEurekaClient
 public class HelpApplication {
 
 	public static void main(String[] args) {

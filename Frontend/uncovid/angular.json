@@ -16,7 +16,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/uncovid",
+            "outputPath": "webapp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -26,13 +26,13 @@
               "src/favicon.ico",
               "src/assets"
             ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.js"
+            ],
             "styles": [
               "src/custom-theme.scss",
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.css"
-            ],
-            "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.js"
             ]
           },
           "configurations": {
@@ -50,6 +50,7 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
+              "aot":true,
               "budgets": [
                 {
                   "type": "initial",
@@ -68,11 +69,13 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "uncovid:build"
+            "browserTarget": "uncovid:build",
+            "proxyConfig": "proxy-local.config.json"
           },
           "configurations": {
             "production": {
-              "browserTarget": "uncovid:build:production"
+              "browserTarget": "uncovid:build:production",
+              "proxyConfig": "proxy-prod.config.json"
             }
           }
         },

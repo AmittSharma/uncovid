@@ -1,0 +1,32 @@
+server:
+  port: 8080
+  
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+      instance:
+        hostname: localhost
+    
+spring:
+  application:
+    name: API-Gateway
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      routes:
+      - id: givehelpservice
+        uri: lb://givehelpservice
+        predicates:
+        - Path= /help/**
+      - id: takehelpservice
+        uri: lb://takehelpservice
+        predicates:
+        - Path= /takehelp/**
+      - id: givehelpservice
+        uri: lb://givehelpservice
+        predicates:
+        - Path= /home/

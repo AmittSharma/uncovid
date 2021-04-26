@@ -1,8 +1,20 @@
+server:
+  port: 8080
+  
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
+#      instance:
+#        hostname: localhost
+    
 spring:
   datasource:
-    username: hbstudent
-    password: hbstudent
-    url: jdbc:mysql://localhost:3306/uncovid
+    username: root
+    password: Amit@speaking@420
+    url: jdbc:mysql://45.93.136.114:3306/uncovid
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     show-sql: true
@@ -11,5 +23,5 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
-server:
-  port: 8080
+  application:
+    name: givehelpservice
