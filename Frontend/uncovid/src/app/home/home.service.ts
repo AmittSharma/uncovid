@@ -7,7 +7,7 @@ import { OtherHelps } from './dto/other-helps';
   providedIn: 'root'
 })
 export class HomeService {
-url = "takehelp/otherHelpers"
+url = "/takehelp/otherHelpers"
   constructor(private http:HttpClient) {
 
    }
