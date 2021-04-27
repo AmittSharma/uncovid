@@ -15,6 +15,8 @@ public class States {
 	@Column(name = "state_name")
 	private String stateName;
 	
+	private int count;
+	
 	public States() {
 		super();
 	}
@@ -36,6 +38,14 @@ public class States {
 	}
 	public void setStateName(String stateName) {
 		this.stateName = stateName;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
 	}
 	
 	

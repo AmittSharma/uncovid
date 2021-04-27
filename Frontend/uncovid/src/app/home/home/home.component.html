@@ -56,8 +56,7 @@
   <h2>Other Helping Hands</h2>
 </div>
 <div class="row" *ngFor="let data of dataSource">
-  <div class="col" align="center">
-    <mat-card style="width: 60%;">
+  <div class="col card-div" >
       <span><strong> Description</strong></span><br>
       <span>{{data.description}}</span><br><br>
       <span>
@@ -65,7 +64,6 @@
           Visit
         </a>
       </span>
-    </mat-card>
     <br>
   </div>
 </div>

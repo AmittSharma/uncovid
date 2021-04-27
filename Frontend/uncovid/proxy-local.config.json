@@ -1,10 +1,10 @@
 {
-  "/help/*": {
+  "/givehelp/help/*": {
     "target": "http://localhost:8080",
     "secure": false,
      "changeOrigin": true
   },
-  "/takehelp/*": {
+  "/givehelp/takehelp/*": {
     "target": "http://localhost:8080",
     "secure": false,
      "changeOrigin": true

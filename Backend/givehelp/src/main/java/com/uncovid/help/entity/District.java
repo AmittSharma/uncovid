@@ -19,6 +19,8 @@ public class District {
 	@Column(name = "state_id")
 	private Integer stateId;
 	
+	private int count;
+	
 	public District() {
 		super();
 	}
@@ -47,6 +49,14 @@ public class District {
 	}
 	public void setStateId(Integer stateId) {
 		this.stateId = stateId;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
 	}
 	
 	

@@ -17,7 +17,7 @@
                                 <mat-select formControlName="stateId" name="stateId" matInput
                                     (selectionChange)="getDistrict($event.value)">
                                     <mat-option *ngFor="let state of states" [value]="state.stateId">
-                                        {{state.stateName}}
+                                        {{state.stateName}} <span class="badge badge-primary">{{state.count}}</span>
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
@@ -27,7 +27,7 @@
                                 <mat-label>District</mat-label>
                                 <mat-select formControlName="districtId" name="districtId" matInput>
                                     <mat-option *ngFor="let district of districts" [value]="district.districtId">
-                                        {{district.districtName}}
+                                        {{district.districtName}} <span class="badge badge-primary">{{district.count}}</span>
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
@@ -112,17 +112,14 @@
 
 
 <div class="row" *ngFor="let help of helps">
-    <div class="col" align="center">
-        <mat-card style="width: 100%;">
-            <div align="center">
+    <div class="col card-div" >
             <span><strong>Location: </strong></span> <span>{{help.districtName}}, {{help.stateName}}</span><br>
             <span><strong>Help Category: </strong></span> <span>{{help.categoryName}}</span><br>
             <span><strong>Description: </strong></span> <span>{{help.description}}</span><br>
             <span><strong>Cost: </strong></span> <span>{{help.paidOrFree}}</span><br>
             <span><strong>Contact Person: </strong></span> <span>{{help.contactPersonName}}</span><br>
             <span><strong>Contact Number: </strong></span> <span>{{help.contactNumber}}</span><br>
-        </div>
-        </mat-card><br>
     </div>
+   
    
 </div>

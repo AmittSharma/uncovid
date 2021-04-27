@@ -44,12 +44,12 @@ public class HelpService {
 
 	public List<States> getListOfStates() {
 		// TODO Auto-generated method stub
-		return stateRepository.findAll();
+		return stateRepository.findSpecificStates();
 
 	}
 
 	public List<District> getListOfDistricts(int stateId) {
-		return districtRepository.findByStateId(stateId);
+		return districtRepository.findSpecificDistrict(stateId);
 	}
 
 	public List<Category> getListOfCategories() {
